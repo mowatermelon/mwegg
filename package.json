@@ -1,0 +1,70 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "@midwayjs/decorator": "^2.3.0",
+    "@midwayjs/orm": "^1.3.0",
+    "@midwayjs/swagger": "^1.0.6",
+    "@midwayjs/web": "^2.3.0",
+    "egg": "^2.0.0",
+    "egg-cors": "^2.2.3",
+    "mysql2": "^2.2.5",
+    "swagger-ui-dist": "^3.44.1"
+  },
+  "devDependencies": {
+    "@midwayjs/cli": "1.2.38",
+    "@midwayjs/egg-ts-helper": "^1.0.5",
+    "@midwayjs/fcli-plugin-fc": "^1.2.50",
+    "@midwayjs/mock": "^2.8.9",
+    "cross-env": "^7.0.3",
+    "egg-scripts": "^2.13.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "egg": {
+    "framework": "@midwayjs/web"
+  },
+  "scripts": {
+    "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
+    "start_build:docs": "通过 @midwayjs/cli 启动 development 开发环境",
+    "dev": "ets && cross-env NODE_ENV=local midway-bin dev --ts",
+    "dev:docs": "一般使用这个做本地开发，通过 @midwayjs/egg-ts-hepler 用于快速生成 EggJS 开发时所依赖的定义，通过 @midwayjs/cli 启动 local 开发环境",
+    "test": "midway-bin test",
+    "test:docs": "通过 @midwayjs/cli 启动代码正确性测试",
+    "cov": "midway-bin cov",
+    "cov:docs": "通过 @midwayjs/cli 启动代码覆盖测试",
+    "ci": "npm run cov",
+    "ci:docs": "启动代码覆盖测试",
+    "mw:build": "midway-bin build -c",
+    "mw:build:docs": "通过 @midwayjs/cli 构建项目开发包，输出 dist 文件夹",
+    "mw:package": "midway-bin package --skipZip",
+    "mw:package:docs": "通过 @midwayjs/cli 做项目打包，并将 server 文件夹下内容拷贝到 .serverless 文件夹中",
+    "mw:deploy": "cd .serverless && npx midway-bin deploy",
+    "mw:deploy:docs": "通过 @midwayjs/cli 做项目发布，并获取临时域名地址",
+    "build": "npm run mw:build && npm run mw:package",
+    "build:docs": "构建项目开发包，输出 dist 文件夹，并做项目打包",
+    "init:config": "npm run fun:config",
+    "init:config:docs": "项目基础初始化配置",
+    "fun:config": "fun config",
+    "fun:config:docs": "利用 @midwayjs/fcli-plugin-fc 做项目出初始配置",
+    "fun:package": "fun package",
+    "fun:package:docs": "利用 @midwayjs/fcli-plugin-fc 做 template.yml 打包，输出 template.packaged.yml 和 .fun/package 文件",
+    "fun:deploy": "fun deploy -y",
+    "fun:deploy:docs": "利用 @midwayjs/fcli-plugin-fc 工具做项目发布到云平台",
+    "deploy": "cd .serverless && npm run fun:package && npm run fun:deploy",
+    "deploy:docs": "在 .serverless 中基于现有的 template.yml 构建项目云包，输出 dist 文件夹"
+  },
+  "midway-bin-clean": [
+    ".vscode/.tsbuildinfo",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "anonymous",
+  "license": "MIT"
+}
