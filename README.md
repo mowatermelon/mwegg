@@ -55,7 +55,8 @@ $ npm run dev
 
 访问 localhost:7000/swagger-ui/index.html
 
-![image](https://user-images.githubusercontent.com/18508817/110923827-4737c800-835c-11eb-80aa-76f861ec713b.png)
+![image](https://user-images.githubusercontent.com/18508817/110947545-42364100-837b-11eb-8db2-d3ded1750771.png)
+
 
 #### 构建 egg 项目
 
