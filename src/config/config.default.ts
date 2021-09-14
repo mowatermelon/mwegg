@@ -16,12 +16,12 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     domainWhiteList: ['http://localhost'],
   };
   config.swagger = {
-    title: 'demo-swagger',
+    title: `demo-${process.env.NODE_ENV}-swagger`,
     description: 'swagger-ui for demo api',
     version: '1.0.0',
     // termsOfService: '',
     contact: {
-      name: 'API extension Support',
+      name: 'API Support',
       url: 'http://test@test.com',
       email: 'test@test.com',
     },

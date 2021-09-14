@@ -1,6 +1,14 @@
-service: midway-egg  ## 应用发布到云平台的名字，一般指应用名
+service: ${env.SERVICE_ENV}  ## 应用发布到云平台的名字，一般指应用名
 
 provider:
   name: aliyun        ## 发布的云平台，aliyun，tencent 等
-
+  runtime: nodejs12
+  timeout: 300       ## 函数执行的最长时间，以 s 为单位，最大是 600
+  initTimeout: 100    ## 函数初始化执行的最长时间，以 s 为单位
+  environment:
+    TZ: 'Asia/Shanghai' ## 配置 GMT +0800 时区
 deployType: egg       ## 部署的应用类型
+
+package:
+  exclude:
+    - package-lock.json

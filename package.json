@@ -54,8 +54,8 @@
     "fun:package:docs": "利用 @midwayjs/fcli-plugin-fc 做 template.yml 打包，输出 template.packaged.yml 和 .fun/package 文件",
     "fun:deploy": "fun deploy -y",
     "fun:deploy:docs": "利用 @midwayjs/fcli-plugin-fc 工具做项目发布到云平台",
-    "deploy": "cd .serverless && npm run fun:package && npm run fun:deploy",
-    "deploy:docs": "在 .serverless 中基于现有的 template.yml 构建项目云包，输出 dist 文件夹"
+    "deploy": "SERVICE_ENV=midway-egg UDEV_NODE_ENV=test midway-bin deploy",
+    "deploy:docs": "通过 @midwayjs/cli 做项目发布"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",
